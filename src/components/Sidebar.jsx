@@ -1,6 +1,7 @@
 import {
   AccountBox,
   Article,
+  Brightness4,
   Group,
   Home,
   ModeNight,
@@ -83,7 +84,7 @@ const Sidebar = ({ setMode,mode }) => {
         <ListItem disablePadding>
           <ListItemButton component="a" href="#simple-list">
             <ListItemIcon>
-              <ModeNight />
+              <Brightness4 />
             </ListItemIcon>
             <Switch onChange={e=>setMode(mode === "light" ? "dark" : "light")} />
           </ListItemButton>

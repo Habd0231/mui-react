@@ -1,4 +1,4 @@
-import { Box, Stack, ThemeProvider, createTheme } from "@mui/material";
+import { Box, CssBaseline, Stack, ThemeProvider, createTheme } from "@mui/material";
 import Feed from "./components/Feed";
 import Rightbar from "./components/Rightbar";
 import Sidebar from "./components/Sidebar";
@@ -11,12 +11,22 @@ function App() {
   const darkTheme = createTheme({
     palette: {
       mode: mode,
+      ...(mode === 'dark' && {
+        background: {
+          default: '#021021',
+          paper:'#010812',
+        },
+      }),
     },
   });
+
+
+
   return (
     <ThemeProvider theme={darkTheme}>
+      <CssBaseline />
       <Box bgcolor={"background.default"} color={"text.primary"}>
-        <Navbar />
+        <Navbar/>
         <Stack direction="row" spacing={2} justifyContent="space-between">
           <Sidebar setMode={setMode} mode={mode} />
           <Feed />
